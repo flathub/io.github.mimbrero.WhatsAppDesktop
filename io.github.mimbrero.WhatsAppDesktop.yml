@@ -16,7 +16,8 @@ build-options:
 finish-args:
   - --share=ipc
   - --socket=x11
-  - --device=dri # OpenGL rendering
+#  - --device=dri # OpenGL rendering
+  - --device=all
   - --socket=pulseaudio
   - --share=network
   - --talk-name=org.freedesktop.Notifications
