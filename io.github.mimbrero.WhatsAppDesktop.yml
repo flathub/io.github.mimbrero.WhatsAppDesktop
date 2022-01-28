@@ -36,8 +36,8 @@ modules:
     build-commands:
       - npm install --offline
       - ../flatpak-node/electron-builder-arch-args.sh
-      - npm run build -- $ELECTRON_BUILDER_ARCH_ARGS --dir
-      - cp -a dist/linux*unpacked /app/whatsapp-desktop-linux 
+      - npm run pack -- $ELECTRON_BUILDER_ARCH_ARGS --dir
+      - cp -a build/linux*unpacked /app/whatsapp-desktop-linux 
       - install -Dm755 ../run.sh /app/bin/whatsapp-desktop-linux
       - install -Dm644 data/io.github.mimbrero.WhatsAppDesktop.appdata.xml -t /app/share/metainfo/
       - install -Dm644 data/io.github.mimbrero.WhatsAppDesktop.desktop -t /app/share/applications/ 
@@ -45,7 +45,7 @@ modules:
     sources:
       - type: git
         url: https://github.com/mimbrero/whatsapp-desktop-linux.git
-        tag: v1.0.0
+        tag: v1.0.1
         dest: whatsapp-desktop-linux
       - generated-sources.json
       - type: script
