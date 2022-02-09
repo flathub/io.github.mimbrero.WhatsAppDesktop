@@ -51,7 +51,7 @@ modules:
     sources:
       - type: git
         url: https://github.com/mimbrero/whatsapp-desktop-linux.git
-        tag: v1.1.0
+        tag: v1.1.1
         dest: whatsapp-desktop-linux
       - generated-sources.json
       - type: script
