@@ -49,9 +49,12 @@ modules:
       - install -Dm644 data/io.github.mimbrero.WhatsAppDesktop.desktop -t /app/share/applications/ 
       - install -Dm644 data/io.github.mimbrero.WhatsAppDesktop.svg -t /app/share/icons/hicolor/scalable/apps/ 
     sources:
+      # - type: dir
+      #   path: ../whatsapp-desktop-linux
+      #   dest: whatsapp-desktop-linux
       - type: git
         url: https://github.com/mimbrero/whatsapp-desktop-linux.git
-        tag: v1.1.1
+        tag: v1.2.0
         dest: whatsapp-desktop-linux
       - generated-sources.json
       - type: script
