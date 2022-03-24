@@ -14,16 +14,23 @@ build-options:
     NPM_CONFIG_LOGLEVEL: info
 
 finish-args:
+  # D-Bus
   - --share=ipc
+  # Xorg and Pulseaudio
   - --socket=x11
-# - --device=dri # OpenGL rendering
-  - --device=all
   - --socket=pulseaudio
+  # Network access
   - --share=network
+  # Camera and OpenGL rendering
+  - --device=all
+  # Notifications
   - --talk-name=org.freedesktop.Notifications
+  # Tray icon
   - --talk-name=org.kde.StatusNotifierWatcher
   - --talk-name=com.canonical.indicator.application
   - --talk-name=org.ayatana.indicator.application
+  # Support for drag & drop and downloading files (drag & drop isn't supported and the native path chooser opens
+  # for downloading files)
   - --filesystem=host
 
 command: whatsapp-desktop-linux
