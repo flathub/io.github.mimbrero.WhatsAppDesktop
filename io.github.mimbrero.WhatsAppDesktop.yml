@@ -10,8 +10,6 @@ sdk-extensions:
 
 build-options:
   append-path: /usr/lib/sdk/node14/bin
-  env:
-    NPM_CONFIG_LOGLEVEL: info
 
 finish-args:
   # D-Bus
@@ -38,7 +36,7 @@ command: whatsapp-desktop-linux
 modules:
   - name: whatsapp-desktop-linux
     buildsystem: simple
-    subdir: whatsapp-desktop-linux
+    subdir: main
     build-options:
       env:
         XDG_CACHE_HOME: /run/build/whatsapp-desktop-linux/flatpak-node/cache
@@ -49,6 +47,7 @@ modules:
       - ../flatpak-node/electron-builder-arch-args.sh
       - npm run build -- $ELECTRON_BUILDER_ARCH_ARGS --dir
       - cp -a build/linux*unpacked /app/whatsapp-desktop-linux
+
       - install -Dm755 ../run.sh /app/bin/whatsapp-desktop-linux
       - install -Dm644 data/io.github.mimbrero.WhatsAppDesktop.appdata.xml -t /app/share/metainfo/
       - install -Dm644 data/io.github.mimbrero.WhatsAppDesktop.desktop -t /app/share/applications/
@@ -56,13 +55,10 @@ modules:
       - install -Dm644 data/icons/hicolor/512x512/apps/io.github.mimbrero.WhatsAppDesktop.png -t /app/share/icons/hicolor/512x512/apps/
       - install -Dm644 data/icons/hicolor/512x512/apps/io.github.mimbrero.WhatsAppDesktop-unread.png -t /app/share/icons/hicolor/512x512/apps/
     sources:
-      # - type: dir
-      #   path: ../whatsapp-desktop-linux
-      #   dest: whatsapp-desktop-linux
       - type: git
         url: https://github.com/mimbrero/whatsapp-desktop-linux.git
-        tag: v1.2.2
-        dest: whatsapp-desktop-linux
+        tag: v1.2.3-1
+        dest: main
       - generated-sources.json
       - type: script
         dest-filename: run.sh
