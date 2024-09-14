@@ -1,0 +1,30 @@
+diff --git a/data/io.github.mimbrero.WhatsAppDesktop.appdata.xml b/data/io.github.mimbrero.WhatsAppDesktop.appdata.xml
+index 2f3c703..f4e3b22 100644
+--- a/main/data/io.github.mimbrero.WhatsAppDesktop.appdata.xml
++++ b/main/data/io.github.mimbrero.WhatsAppDesktop.appdata.xml
+@@ -15,16 +15,14 @@
+   <url type="bugtracker">https://github.com/mimbrero/whatsapp-desktop-linux/issues</url>
+   <url type="homepage">https://github.com/mimbrero/whatsapp-desktop-linux</url>
+ 
+-  <requires>
+-    <display_length compare="ge">medium</display_length>
+-  </requires>
+-
+   <recommends>
+     <control>keyboard</control>
+     <control>pointing</control>
+     <control>touch</control>
+   </recommends>
+ 
++  <launchable type="desktop-id">io.github.mimbrero.WhatsAppDesktop.desktop</launchable>
++
+   <content_rating type="oars-1.1">
+     <content_attribute id="social-chat">intense</content_attribute>
+     <content_attribute id="social-info">intense</content_attribute>
+@@ -106,4 +104,4 @@
+ 
+   <developer_name>Alberto Mimbrero</developer_name>
+   <update_contact>mimbrero.alberto@gmail.com</update_contact>
+-</component>
+\ No newline at end of file
++</component>
