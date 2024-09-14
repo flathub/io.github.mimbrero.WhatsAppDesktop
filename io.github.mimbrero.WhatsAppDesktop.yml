@@ -59,6 +59,8 @@ modules:
         url: https://github.com/mimbrero/whatsapp-desktop-linux.git
         tag: v1.2.3-2
         dest: main
+      - type: patch
+        path: appdata.patch
       - generated-sources.json
       - type: script
         dest-filename: run.sh
